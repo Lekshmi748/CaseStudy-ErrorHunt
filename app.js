@@ -13,11 +13,11 @@ const nav= [
         title:"Authors"
     },
     {
-        link:"/books/addbook", //Part#2 Point6
+        link:"/books/addbook", //Part#2 Point-6
         title:"Add Book"
     },
     {
-        link:"/addauthor",  //Part#2 Point6
+        link:"/authors/addauthor",  //Part#2 Point-6
         title:"Add Author"
     }
 ]
