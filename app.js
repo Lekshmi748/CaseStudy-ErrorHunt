@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');  //Part#1 Point-2
 const path = require ('path'); 
 const cors = require('cors');
-
+const port = process.env.PORT || 5000;
 const nav= [
     {
         link:"/books",
@@ -13,11 +13,11 @@ const nav= [
         title:"Authors"
     },
     {
-        link:"/books/addbook", //Part#2 Point6
+        link:"/books/addbook", //Part#2 Point-6
         title:"Add Book"
     },
     {
-        link:"/addauthor",  //Part#2 Point6
+        link:"/authors/addauthor",  //Part#2 Point-6
         title:"Add Author"
     }
 ]
@@ -28,7 +28,7 @@ const homeRouter = require('./src/routes/homerouter')(nav);  //Part#1 Point-3   
 const booksRouter = require('./src/routes/booksroute')(nav);  //Part#2 Point-6
 const authorsRouter = require('./src/routes/authorsroute')(nav); //Part#2 Point-6
 
-const app = new express();  //Part#1 Point-1 
+const app = new express;  //Part#1 Point-1 
 
 
 app.set('views','./src/views'); 
@@ -47,7 +47,7 @@ app.use('/authors',authorsRouter);
 
 
 
-app.get('/',function(req,res){
+app.get('/',function (req,res)  {
 
     res.render('index',{});
     
@@ -55,6 +55,6 @@ app.get('/',function(req,res){
 
 
 
-app.listen(5000,()=>{ //Part#1 Point-5
+app.listen(port,()=>{ //Part#1 Point-5
     console.log("Server Ready on 5000");
 });

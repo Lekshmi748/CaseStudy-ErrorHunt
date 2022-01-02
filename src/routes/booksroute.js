@@ -65,7 +65,6 @@ booksRouter.get('/:id',function(req,res){
 
 //router to delete book
 booksRouter.post('/delete', function (req, res) {
-
     const id = req.body.id;  
 
     bookdata.findOneAndDelete({ _id: id }, //Part#2 Point-9
